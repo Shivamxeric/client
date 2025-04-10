@@ -1,5 +1,5 @@
 import React from 'react';
-import contactImage from './Contact.png';
+import contactImage from './contact.png';
 import HeaderTwo from './Header';
 import Footer from './Footer';
 import { PhoneCall, Mail, MessageCircle } from 'lucide-react';
