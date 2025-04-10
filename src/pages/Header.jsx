@@ -21,8 +21,9 @@ const Header = () => {
         {/* Left - Logo */}
         <div className="flex items-center gap-4 text-xl font-bold tracking-wide">
           <Link to="/" className="flex items-center gap-2">
+          
             <span className="text-blue-600">🌐</span>
-            <span>My WebApp</span>  
+            <span>STUDYSPHERE</span>  
           </Link>
         </div>
 

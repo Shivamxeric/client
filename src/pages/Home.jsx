@@ -10,14 +10,13 @@ import { motion } from 'framer-motion';
 const Home = () => {
   return (
     <div className="min-h-screen bg-white text-gray-800 pb-24">
-
       {/* Header */}
       <Header />
 
-      {/* Hero Section with Animation */}
-      <section className="text-center py-20 bg-gradient-to-b from-blue-100 to-white text-gray-900">
+      {/* Hero Section */}
+      <section className="text-center py-16 sm:py-20 px-4 bg-gradient-to-b from-blue-100 to-white text-gray-900">
         <motion.h1
-          className="text-5xl font-extrabold mb-4 leading-tight tracking-tight"
+          className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 leading-tight tracking-tight"
           initial={{ opacity: 0, y: -40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
@@ -26,46 +25,40 @@ const Home = () => {
         </motion.h1>
 
         <motion.p
-          className="text-lg max-w-2xl mx-auto text-gray-700"
+          className="text-base sm:text-lg max-w-2xl mx-auto text-gray-700"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
-          We give you the assurance of guarantee.
+          We give you the assurance of guarantee. Let our experienced experts handle your assignments.          🚀 Empowering Students | ✍️ Assignment Help | 💻 Project Support
+
+
         </motion.p>
 
-        <motion.p
-          className="text-base italic mt-4 text-gray-600"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1 }}
-        >
-          Let our experienced experts handle your assignments.
-        </motion.p>
+       
 
         <motion.div
-          className="mt-6 text-sm text-gray-500"
+          className="mt-6 text-xs sm:text-sm text-gray-500"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2, delay: 1.3 }}
-        >
-          🚀 Empowering Students | ✍️ Assignment Help | 💻 Project Support
+        >  We will help you with your assignments, projects, and online work.
         </motion.div>
       </section>
 
       {/* Services Section */}
-      <section className="py-16 px-4 md:px-16 bg-gray-50">
-        <h2 className="text-3xl font-semibold text-center mb-12">Our Services</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <section className="py-12 sm:py-16 px-4 md:px-16 bg-gray-50">
+        <h2 className="text-2xl sm:text-3xl font-semibold text-center mb-10 sm:mb-12">Our Specialization</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
           {/* Assignment Help */}
           <motion.div
             className="bg-white border p-6 rounded-2xl hover:shadow-lg transition"
             whileHover={{ scale: 1.05 }}
           >
             <div className="flex justify-center mb-4">
-              <FileText className="w-12 h-12 text-blue-600" />
+              <FileText className="w-10 h-10 sm:w-12 sm:h-12 text-blue-600" />
             </div>
-            <h3 className="text-xl font-semibold text-center">Assignment Help</h3>
+            <h3 className="text-lg sm:text-xl font-semibold text-center">Assignment Help</h3>
             <p className="text-sm text-center mt-2 text-gray-500">
               Get professional help with your assignments and study material.
             </p>
@@ -80,9 +73,9 @@ const Home = () => {
             whileHover={{ scale: 1.05 }}
           >
             <div className="flex justify-center mb-4">
-              <ImageIcon className="w-12 h-12 text-green-600" />
+              <ImageIcon className="w-10 h-10 sm:w-12 sm:h-12 text-green-600" />
             </div>
-            <h3 className="text-xl font-semibold text-center">College Projects</h3>
+            <h3 className="text-lg sm:text-xl font-semibold text-center">College Projects</h3>
             <p className="text-sm text-center mt-2 text-gray-500">
               Complete guidance for your academic and final year projects.
             </p>
@@ -97,9 +90,9 @@ const Home = () => {
             whileHover={{ scale: 1.05 }}
           >
             <div className="flex justify-center mb-4">
-              <Code className="w-12 h-12 text-red-600" />
+              <Code className="w-10 h-10 sm:w-12 sm:h-12 text-red-600" />
             </div>
-            <h3 className="text-xl font-semibold text-center">Online Work</h3>
+            <h3 className="text-lg sm:text-xl font-semibold text-center">Online Work</h3>
             <p className="text-sm text-center mt-2 text-gray-500">
               Need help with freelance, data entry, or digital tasks? We’re here.
             </p>
@@ -107,6 +100,20 @@ const Home = () => {
               Get Started
             </Link>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="py-12 px-4 sm:px-6 md:px-16 bg-white">
+        <div className="max-w-4xl mx-auto bg-blue-50 rounded-2xl shadow-lg p-6 sm:p-8 text-gray-800">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-center text-blue-700 mb-4 sm:mb-6">
+            Why Choose <span className="text-blue-900 font-bold">STUDYSPHERE</span>?
+          </h2>
+          <p className="text-sm sm:text-base leading-relaxed text-justify">
+            ✅ At STUDYSPHERE, we pride ourselves on delivering exceptional quality and authenticity in every piece of work. All our reports are 100% plagiarism-free and backed by in-depth AI-generated analysis.
+            ✅ We provide detailed grammar assessments and offer free modifications to ensure your satisfaction. ✅ You'll get direct access to our talented writers for seamless communication. We offer affordable pricing with timely delivery, and our work is always fully referenced in your preferred format — APA, MLA, Harvard, and more.
+            ✅ With 24/7 expert assistance, your queries are always answered, and we maintain strict confidentiality to ensure safe and secure submissions every time.
+          </p>
         </div>
       </section>
 

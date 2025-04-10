@@ -28,9 +28,9 @@ const Contact = () => {
               a <strong>student working on assignments</strong>, or a foreign learner — we're here to support you!
             </p>
             <div className="space-y-3 text-gray-800 text-md">
-              <p>📍 Location: Faridabad, Haryana</p>
+              <p>📍 Location: UK, USA, Germany, Paris, Australia</p>
               <p>📞 Phone: <a className="text-blue-600 hover:underline" href="tel:+919582516409">+91 70673 41687</a></p>
-              <p>📧 Email: <a className="text-blue-600 hover:underline" href="mailto:jhashivam884@gmail.com">jhashivam884@gmail.com</a></p>
+              <p>📧 Email: <a className="text-blue-600 hover:underline" href="mailto:studyspehere024@gmail.com">studyspehere024@gmail.com</a></p>
               <p>🌐 Portfolio: <a className="text-blue-600 hover:underline" href="https://github.com/shivamxeric" target="_blank" rel="noreferrer">shivamxeric</a></p>
             </div>
             <p className="text-gray-600">
@@ -56,7 +56,7 @@ const Contact = () => {
               <Mail size={40} />
             </div>
             <h3 className="text-xl font-semibold mb-2">Email Us</h3>
-            <p className="text-gray-700"><a href="mailto:jhashivam884@gmail.com">jhashivam884@gmail.com</a></p>
+            <p className="text-gray-700"><a href="mailto:studyspehere024@gmail.com">studyspehere024@gmail.com</a></p>
           </div>
 
           {/* WhatsApp Card */}
