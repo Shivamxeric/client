@@ -7,7 +7,7 @@ import { PhoneCall, Mail, MessageCircle } from 'lucide-react';
 const Contact = () => { 
   return (
     <>
-      <HeaderTwo />
+      <HeaderTwo  /> 
 
       <section className="min-h-screen pt-24 px-4 py-12 bg-gradient-to-b from-white to-blue-50">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
@@ -53,7 +53,7 @@ const Contact = () => {
           {/* Email Card */}
           <div className="bg-white rounded-2xl shadow-xl p-6 text-center hover:scale-105 transition duration-300">
             <div className="flex justify-center mb-4 text-blue-600">
-              <Mail size={40} />
+              <Mail size={40} /> 
             </div>
             <h3 className="text-xl font-semibold mb-2">Email Us</h3>
             <p className="text-gray-700"><a href="mailto:studyspehere024@gmail.com">studyspehere024@gmail.com</a></p>
