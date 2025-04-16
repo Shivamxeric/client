@@ -68,7 +68,7 @@ const Home = () => {
               transition={{ duration: 1 }}
             >
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                STUDYSPHERE
+                STUDYHUB
               </span> - Your Academic Success Partner
             </motion.h1>
 
@@ -188,7 +188,7 @@ const Home = () => {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-2xl sm:text-3xl font-semibold text-center mb-8">
-                Why Choose StudySphere?
+                Why Choose StudyHub?
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {[
