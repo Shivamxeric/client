@@ -20,17 +20,17 @@ const Footer = () => {
         {/* Footer Bottom */}
         <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-700 gap-4">
           <div className="font-bold text-blue-700 text-lg flex items-center gap-2">
-            📘 StudySphere
+            📘 StudyHub
           </div>
 
           <div className="text-center md:text-left">
-            © {new Date().getFullYear()} StudySphere. All rights reserved.
+            © {new Date().getFullYear()} StudyHub. All rights reserved.
           </div>
 
           <div className="flex items-center space-x-4 text-blue-600">
             <SocialLink href="https://github.com/shivamxeric" icon={<Github size={20} />} />
             <SocialLink href="https://twitter.com" icon={<Twitter size={20} />} />
-            <SocialLink href="mailto:studysphere@gmail.com" icon={<Mail size={20} />} />
+            <SocialLink href="mailto:StudyHub@gmail.com" icon={<Mail size={20} />} />
           </div>
         </div>
       </div>
