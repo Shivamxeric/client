@@ -73,7 +73,7 @@ const Services = () => {
     
     <section className="min-h-screen pt-24 px-6 md:px-20 bg-gradient-to-br from-blue-50 via-white to-blue-100 text-gray-800">
       <div className="text-center mb-8">
-        <h1 className="text-4xl font-extrabold tracking-tight text-blue-800">OUR STUDYHUB </h1>
+        <h1 className="text-4xl font-extrabold tracking-tight text-blue-800">OUR STUDYSPHERE </h1>
         <p className="text-lg mt-2 text-gray-600">Explore our wide range of academic assistance</p>
       </div>
 
