@@ -6,6 +6,8 @@ import React from 'react';
 import 'animate.css';
 import { Toaster } from 'react-hot-toast';
 import Service from './pages/Services';
+import SampleOfWork from './pages/SampleOfWork';
+import Feedback from './pages/Feedback';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Service />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/sample" element={<SampleOfWork />} />
+          <Route path="/feedback" element={<Feedback />} />
         </Routes>
       </Router>
       <Toaster />

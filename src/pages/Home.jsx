@@ -5,12 +5,16 @@ import Footer from './Footer';
 import { FileText, ImageIcon, Code, CheckCircle, Users, Clock, Shield } from 'lucide-react';
 import { motion } from 'framer-motion';
 import bg from './cleint.jpg';
+import About from './About';  
+import sample from './SampleOfWork';  
+import Contact from './Contact';
+import { FaTools, FaComments } from 'react-icons/fa';
 
 const Home = () => {
   return (
     <>
       <div className="min-h-screen relative bg-transparent text-gray-800 pb-24 overflow-hidden">
-
+   
         {/* Blurred Background Image */}
         <div
           className="absolute inset-0 bg-no-repeat bg-cover bg-center blur-sm opacity-60 -z-20"
@@ -177,6 +181,35 @@ const Home = () => {
             </motion.div>
           </div>
         </section>
+        <div className="flex flex-col md:flex-row gap-6 items-center justify-center mt-10 px-4">
+   <Link to="/sample">   {/* Sample of Works Button */}
+      <motion.div
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="bg-gradient-to-r from-blue-600 to-indigo-600 p-6 rounded-2xl shadow-lg text-white w-64 text-center cursor-pointer"
+      >
+        <FaTools size={32} className="mx-auto mb-3" />
+        <h2 className="text-xl font-semibold">Sample of Works</h2>
+        <p className="text-sm mt-2">
+          Explore practical tasks reflecting accuracy, digital workflows, and ERP use.
+        </p>
+      </motion.div>
+      </Link>
+      {/* Feedback Button */}
+      <Link to="/feedback">
+      <motion.div
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="bg-gradient-to-r from-green-600 to-emerald-500 p-6 rounded-2xl shadow-lg text-white w-64 text-center cursor-pointer"
+      >
+        <FaComments size={32} className="mx-auto mb-3" />
+        <h2 className="text-xl font-semibold">Feedback</h2>
+        <p className="text-sm mt-2">
+          Share insights on how I contributed to efficient and accurate data systems.
+        </p>
+      </motion.div>
+      </Link>
+    </div>
 
         {/* Why Choose Us */}
         <section className="py-12 px-4 sm:px-6 md:px-16 bg-transparent">
@@ -223,7 +256,8 @@ const Home = () => {
           Start Now
         </Link>
       </div>
-
+<About/>
+<Contact/>
       <Footer />
     </>
   );
