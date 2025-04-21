@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import sample from "./Sample.png"
+import sample from "./sample.png"
 import { FaFileAlt, FaUserTie } from "react-icons/fa";
 import Header from "./Header";
 import Footer from "./Footer";
