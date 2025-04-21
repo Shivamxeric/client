@@ -5,7 +5,7 @@ import { FaFileAlt, FaUserTie } from "react-icons/fa";
 import Header from "./Header";
 import Footer from "./Footer";
 
-export default function SampleOfWorkPage() {
+export default function SampleOfWork() {
   return (
     <>
     <Header/>

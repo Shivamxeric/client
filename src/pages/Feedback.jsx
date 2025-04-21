@@ -2,7 +2,7 @@ import React from "react";
 import { FaBookOpen, FaUserGraduate, FaTrophy } from "react-icons/fa";
 import { motion } from "framer-motion";
 
-const GradesDashboard = () => {
+const Feedback = () => {
   return (
     <div className="min-h-screen p-6 bg-gradient-to-br from-blue-50 to-purple-100 font-sans text-gray-800">
       {/* Header */}
@@ -100,4 +100,4 @@ const GradesDashboard = () => {
   );
 };
 
-export default GradesDashboard;
+export default Feedback;
