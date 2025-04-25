@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { FaExpand, FaInfoCircle, FaTimes } from "react-icons/fa";
 import { motion } from "framer-motion";
 import GradeReport from "./img1.jpg";
-import SampleWork from "./img2.jpg";
+import SampleWork from "./img2.jpg"
+import Header from './Header';
+import Footer from './Footer';
 
 const ImageModal = ({ src, onClose, children }) => (
   <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4">
@@ -44,6 +46,7 @@ const AcademicDashboard = () => {
 
   return (
     <div className="min-h-screen p-6 bg-gradient-to-br from-blue-50 to-purple-100 font-sans text-gray-800">
+      <Header/>
       {selectedImage && (
         <ImageModal src={selectedImage} onClose={() => setSelectedImage(null)}>
           <h3 className="text-xl font-bold mb-2">{selectedWork?.title}</h3>
@@ -211,6 +214,7 @@ const AcademicDashboard = () => {
           ))}
         </div>
       </motion.section>
+      <Footer/>
     </div>
   );
 };
