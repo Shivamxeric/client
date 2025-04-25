@@ -45,8 +45,10 @@ const AcademicDashboard = () => {
   ];
 
   return (
-    <div className="min-h-screen p-6 bg-gradient-to-br from-blue-50 to-purple-100 font-sans text-gray-800">
+    <>
       <Header/>
+    <div className="min-h-screen p-6 bg-gradient-to-br from-blue-50 to-purple-100 font-sans text-gray-800">
+      
       {selectedImage && (
         <ImageModal src={selectedImage} onClose={() => setSelectedImage(null)}>
           <h3 className="text-xl font-bold mb-2">{selectedWork?.title}</h3>
@@ -214,8 +216,10 @@ const AcademicDashboard = () => {
           ))}
         </div>
       </motion.section>
-      <Footer/>
+      
     </div>
+      <Footer/>
+    </>
   );
 };
 
