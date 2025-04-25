@@ -7,15 +7,21 @@ import Footer from './Footer';
 
 
 const servicesList = [
+  'Weekly Assignment',
+   'Management',
+  'Marketing',
   'Dissertations',
+   'Project Management',
+  'Law & History',
   'Statistics',
   'Economics',
-  'Weekly Assignment',
+ ' Law',
+  
   'Essay writing',
   'History',
   'Philosophy',
   'Nursing',
-  'Law',
+  
   'Sociology',
   'Medicine',
   'International Relations',
@@ -30,8 +36,7 @@ const servicesList = [
   'XML',
   'Business Studies',
   'Business Analytics',
-  'Management',
-  'Marketing',
+ 
   'Account & Finance',
   'Risk Management',
   'MBA, BA, MFA, MAIS, BABA',
@@ -47,8 +52,7 @@ const servicesList = [
   'Literature Review',
   'Programming & Software Development',
   'Psychology',
-  'Project Management',
-  'Law & History',
+ 
   'Pharmacy & Bio Sciences',
   'Health & Social Care'
 ];
