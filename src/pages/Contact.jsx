@@ -30,7 +30,7 @@ const Contact = () => {
               a <strong>student working on assignments</strong>, or a foreign learner — we're here to support you!
             </p>
             <div className="space-y-3 text-gray-800 text-md">
-              <p>📍 Location: UK, USA, Germany, Paris, Australia</p>
+              <p>📍 Location: UK, USA, Germany, Paris, NewZeland, Canada  </p>
               <p>📞 Phone: <a className="text-blue-600 hover:underline" href="tel:+919582516409">+91 70673 41687</a></p>
               <p>📧 Email: <a className="text-blue-600 hover:underline" href="mailto:studyspehere024@gmail.com">studyspehere024@gmail.com</a></p>
               <p>🌐 Portfolio: <a className="text-blue-600 hover:underline" href="https://github.com/shivamxeric" target="_blank" rel="noreferrer">shivamxeric</a></p>

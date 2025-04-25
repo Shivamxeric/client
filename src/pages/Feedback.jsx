@@ -1,103 +1,218 @@
-import React from "react";
-import { FaBookOpen, FaUserGraduate, FaTrophy } from "react-icons/fa";
+import React, { useState } from "react";
+import { FaExpand, FaInfoCircle, FaTimes } from "react-icons/fa";
 import { motion } from "framer-motion";
+import GradeReport from "./img1.jpg";
+import SampleWork from "./img2.jpg";
 
-const Feedback = () => {
+const ImageModal = ({ src, onClose, children }) => (
+  <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4">
+    <div className="bg-white rounded-lg max-w-4xl max-h-[90vh] overflow-auto relative">
+      <button 
+        onClick={onClose}
+        className="absolute top-4 right-4 text-2xl text-gray-600 hover:text-red-600"
+      >
+        <FaTimes />
+      </button>
+      <img src={src} alt="Full size" className="w-full h-auto" />
+      <div className="p-4 bg-white">
+        {children}
+      </div>
+    </div>
+  </div>
+);
+
+const AcademicDashboard = () => {
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedWork, setSelectedWork] = useState(null);
+
+  const sampleWorks = [
+    {
+      image: GradeReport,
+      title: "Global Marketing Strategy",
+      code: "MS70125E",
+      grade: "98.76%",
+      description: "Comprehensive market entry strategy for Signet Jewelers in South Korea..."
+    },
+    {
+      image: SampleWork,
+      title: "Dining Operations Plan",
+      code: "HOS-210",
+      grade: "100%",
+      description: "Detailed operational blueprint for hypothetical restaurant..."
+    }
+  ];
+
   return (
     <div className="min-h-screen p-6 bg-gradient-to-br from-blue-50 to-purple-100 font-sans text-gray-800">
-      {/* Header */}
-      <motion.h1 
-        className="text-4xl font-extrabold text-center mb-10 text-purple-800"
-        initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
+      {selectedImage && (
+        <ImageModal src={selectedImage} onClose={() => setSelectedImage(null)}>
+          <h3 className="text-xl font-bold mb-2">{selectedWork?.title}</h3>
+          <p className="text-gray-600">{selectedWork?.description}</p>
+          <div className="mt-4 flex gap-2">
+            <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded">
+              {selectedWork?.code}
+            </span>
+            <span className="bg-green-100 text-green-800 px-2 py-1 rounded">
+              {selectedWork?.grade}
+            </span>
+          </div>
+        </ImageModal>
+      )}
+
+      {/* Header Section */}
+      <motion.header 
+        className="text-center mb-12"
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }}
       >
-        📚 Academic Dashboard – 2025
-      </motion.h1>
-
-      {/* Student Info */}
-      <motion.div 
-        className="bg-white p-6 rounded-2xl shadow-md mb-8 flex items-center gap-4"
-        initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}
-      >
-        <FaUserGraduate className="text-4xl text-indigo-600" />
-        <div>
-          <h2 className="text-xl font-semibold">John Doe</h2>
-          <p>Program: Human Services – Substance Abuse Counseling</p>
-          <p>Student ID: HS2025-0231</p>
-        </div>
-      </motion.div>
-
-      {/* Course Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-        {[
-          { code: "HUS-205", name: "Intro to Group Processes", grade: "A" },
-          { code: "HUS-223", name: "Behavior Management", grade: "A" },
-          { code: "SUB-122", name: "Substance Abuse Pharmacology", grade: "A" }
-        ].map((course, idx) => (
-          <motion.div 
-            key={idx}
-            className="bg-white rounded-xl p-5 shadow-md border-l-4 border-purple-500"
-            initial={{ opacity: 0, y: 20 * idx }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 + idx * 0.2 }}
-          >
-            <FaBookOpen className="text-3xl text-purple-600 mb-2" />
-            <h3 className="text-lg font-semibold">{course.name}</h3>
-            <p className="text-sm text-gray-600">Code: {course.code}</p>
-            <p className="mt-2 text-md font-bold text-green-600">Grade: {course.grade}</p>
-          </motion.div>
-        ))}
-      </div>
-
-      {/* Performance Section */}
-      <div className="grid md:grid-cols-2 gap-6 mb-10">
-        {[
-          { score: "958 / 970", percentage: "98.76%" },
-          { score: "983.77 / 1000", percentage: "98.38%" }
-        ].map((result, i) => (
-          <motion.div 
-            key={i}
-            className="bg-white p-6 rounded-xl shadow-md"
-            initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.3 + i * 0.2 }}
-          >
-            <h4 className="text-xl font-semibold mb-2">Grade: A</h4>
-            <p className="mb-2">Points: {result.score}</p>
-            <div className="w-full bg-gray-200 rounded-full h-4">
-              <div
-                className="bg-green-500 h-4 rounded-full"
-                style={{ width: result.percentage }}
-              ></div>
-            </div>
-            <p className="text-right mt-1 text-sm font-bold">{result.percentage}</p>
-          </motion.div>
-        ))}
-      </div>
-
-      {/* Achievements */}
-      <motion.div 
-        className="bg-white p-6 rounded-xl shadow-md mb-10"
-        initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
-      >
-        <div className="flex items-center mb-3">
-          <FaTrophy className="text-yellow-500 text-2xl mr-2" />
-          <h3 className="text-lg font-bold">Achievements</h3>
-        </div>
-        <ul className="list-disc pl-6">
-          <li>Top performer in Behavioral Sciences</li>
-          <li>Consistently scored A in all subjects</li>
-          <li>Exemplary participation in group activities</li>
-        </ul>
-      </motion.div>
-
-      {/* Notes */}
-      <motion.div 
-        className="bg-purple-100 p-6 rounded-xl shadow-inner"
-        initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.7 }}
-      >
-        <h4 className="text-md font-bold mb-2">📌 Notes from the Instructor</h4>
-        <p className="italic text-gray-700">
-          "Shivam has shown great leadership in group activities and maintains outstanding academic discipline. Keep up the excellent work!"
+        <h1 className="text-3xl md:text-4xl font-bold text-purple-800 mb-2">
+          🎓 2025 Academic Portfolio
+        </h1>
+        <p className="text-purple-600 text-sm md:text-base">
+          Human Services - Substance Abuse Counseling
         </p>
-      </motion.div>
+      </motion.header>
+
+      {/* Course Grid */}
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        {[
+          { 
+            code: "HUS-205-100", 
+            name: "Intro to Group Processes",
+            schedule: "Jan 14 - May 13, 2025",
+            grade: "A"
+          },
+          { 
+            code: "HUS-223-100", 
+            name: "Behavior Management",
+            schedule: "Jan 16 - May 8, 2025",
+            grade: "A"
+          },
+          { 
+            code: "SUB-122-100", 
+            name: "Substance Abuse Pharmacology",
+            schedule: "Jan 13 - May 14, 2025",
+            grade: "A"
+          }
+        ].map((course, index) => (
+          <motion.div 
+            key={index}
+            className="bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-shadow"
+            initial={{ y: 20 }} animate={{ y: 0 }}
+          >
+            <div className="flex justify-between items-start">
+              <div>
+                <h3 className="font-semibold text-lg">{course.name}</h3>
+                <p className="text-sm text-gray-500">{course.code}</p>
+              </div>
+              <span className="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">
+                {course.grade}
+              </span>
+            </div>
+            <p className="text-sm text-gray-600 mt-2">{course.schedule}</p>
+            <button className="mt-3 text-blue-600 hover:text-blue-800 flex items-center gap-1 text-sm">
+              <FaInfoCircle /> View Details
+            </button>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Sample Work Section */}
+      <motion.section 
+        className="mb-12"
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+      >
+        <h3 className="text-xl font-bold mb-6">📂 Academic Work Samples</h3>
+        <div className="grid md:grid-cols-2 gap-6">
+          {sampleWorks.map((work, index) => (
+            <motion.div 
+              key={index}
+              className="bg-white rounded-xl shadow-md overflow-hidden"
+              whileHover={{ scale: 1.02 }}
+            >
+              <div className="relative">
+                <img 
+                  src={work.image} 
+                  alt="Sample work" 
+                  className="w-full h-48 object-cover cursor-pointer"
+                  onClick={() => {
+                    setSelectedImage(work.image);
+                    setSelectedWork(work);
+                  }}
+                />
+                <button 
+                  className="absolute top-2 right-2 bg-white p-2 rounded-full shadow-sm hover:bg-gray-100"
+                  onClick={() => {
+                    setSelectedImage(work.image);
+                    setSelectedWork(work);
+                  }}
+                >
+                  <FaExpand className="text-gray-600" />
+                </button>
+              </div>
+              <div className="p-4">
+                <h4 className="font-semibold">{work.title}</h4>
+                <div className="flex gap-2 mt-2">
+                  <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">
+                    {work.code}
+                  </span>
+                  <span className="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">
+                    {work.grade}
+                  </span>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </motion.section>
+
+      {/* Grade Reports */}
+      <motion.section 
+        className="mb-12"
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+      >
+        <h3 className="text-xl font-bold mb-6">📊 Performance Reports</h3>
+        <div className="grid md:grid-cols-2 gap-6">
+          {[
+            { 
+              title: "SAGES Overall", 
+              score: "958/970", 
+              percentage: "98.76%",
+              image: GradeReport
+            },
+            { 
+              title: "PSY-650-0500", 
+              score: "983.77/1000", 
+              percentage: "98.38%",
+              image: GradeReport
+            }
+          ].map((report, index) => (
+            <div key={index} className="bg-white rounded-xl p-4 shadow-md">
+              <div className="flex justify-between items-center mb-4">
+                <h4 className="font-semibold">{report.title}</h4>
+                <button 
+                  className="text-blue-600 hover:text-blue-800 flex items-center gap-1 text-sm"
+                  onClick={() => setSelectedImage(report.image)}
+                >
+                  <FaExpand /> Expand
+                </button>
+              </div>
+              <div className="flex items-center gap-4">
+                <div className="flex-1 bg-gray-200 rounded-full h-3">
+                  <div 
+                    className="bg-green-500 h-3 rounded-full" 
+                    style={{ width: report.percentage }}
+                  ></div>
+                </div>
+                <span className="font-semibold text-green-600">
+                  {report.score}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </motion.section>
     </div>
   );
 };
 
-export default Feedback;
+export default AcademicDashboard;
