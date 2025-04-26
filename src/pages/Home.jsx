@@ -64,7 +64,7 @@ const Home = () => {
         <section className="relative text-center py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-10 text-gray-900">
           <div className="max-w-4xl mx-auto">
             <motion.h1
-  className="text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight tracking-tight mb-2"
+  className="text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight tracking-tight mb-4 mt-6"
   initial={{ opacity: 0, y: -40 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ duration: 1 }}
