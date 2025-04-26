@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Home, User, Menu, X, PhoneCall, NotebookPen } from 'lucide-react'; // Added NotebookPen for services icon
 import { motion, AnimatePresence } from 'framer-motion';
+import logo from "./logo.jpg"
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,13 +20,20 @@ const Header = () => {
       <div className="flex justify-between items-center max-w-7xl mx-auto">
 
         {/* Left - Logo */}
-        <div className="flex items-center gap-4 text-xl font-bold tracking-wide">
-          <Link to="/" className="flex items-center gap-2">
-          
-            <span className="text-blue-600">🌐</span>
-            <span>STUDYSPHERE</span>  
-          </Link>
-        </div>
+{/* Left - Logo */}
+<div className="flex items-center gap-3">
+  <Link to="/" className="flex items-center gap-3 text-blue-700 font-extrabold text-2xl tracking-tight">
+    <img
+      className="h-10 w-10 rounded-full shadow-md ring-2 ring-blue-500 object-cover"
+      src={logo}
+      alt="logo"
+    />
+    <span className="bg-gradient-to-r from-blue-600 to-purple-500 text-transparent bg-clip-text">
+      STUDYSPHERE
+    </span>
+  </Link>
+</div>
+
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-6 text-lg items-center">

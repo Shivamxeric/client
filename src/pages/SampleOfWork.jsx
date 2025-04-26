@@ -1,68 +1,72 @@
 import React from "react";
 import { motion } from "framer-motion";
-import sample from "./sample.png"
 import { FaFileAlt, FaUserTie } from "react-icons/fa";
 import Header from "./Header";
 import Footer from "./Footer";
+import sample from "./sample.png";
+
+const works = [
+  {
+    title: "Component Research Report",
+    description:
+      "Formal research paper including Python data pipeline, abstract, architecture diagrams, experiment results, and ARU Harvard references — focused on machine learning methodology and evaluation.",
+    docLink: "/PDF1.pdf",
+  },
+  {
+    title: "Engineering Management Report",
+    description:
+      "Case study on Innovare Motors: Discusses production planning & control (PPC), market demand fluctuations, EV manufacturing strategy, and modern tech integration (AI, IoT, VR).",
+    docLink: "/PDF2.pdf",
+  },
+  {
+    title: "Personal Effectiveness & Learning",
+    description:
+      "Self-reflection report based on leadership case studies (Elon Musk, Oscar Munoz), visual/social learning styles, online platforms (Coursera, LinkedIn Learning), and remote learning behavior.",
+    docLink: "/PDF3.pdf",
+  },
+];
 
 export default function SampleOfWork() {
   return (
     <>
-    <Header/>
+      <Header />
 
-    <div className="min-h-screen bg-gray-100 p-8">
+      <div className="min-h-screen bg-gradient-to-br from-blue-100 to-white py-12 px-6">
+        <div className="max-w-6xl mx-auto bg-white p-10 shadow-2xl rounded-3xl">
+          {/* Title & Intro */}
+          <div className="flex items-center gap-4 mb-8">
+            <FaUserTie className="text-blue-600 text-4xl" />
+            <h1 className="text-3xl md:text-4xl font-bold text-blue-700">
+              Our Professional Work Showcase
+            </h1>
+          </div>
 
-      <div className="max-w-5xl mx-auto bg-white shadow-2xl rounded-3xl p-10">
-        <div className="flex items-center gap-4 mb-6">
-          <FaUserTie className="text-blue-700 text-3xl" />
-          <h1 className="text-3xl font-bold text-blue-700">Professional Sample Work</h1>
-        </div>
-
-        <section className="mb-10">
-          <h2 className="text-2xl font-semibold text-gray-800 mb-2">Project Overview</h2>
-          <p className="text-gray-700 leading-relaxed">
-            The following report presents a professional body of work carried out during various academic and
-            industry-aligned research and operational projects. This includes deep exploration of topics such
-            as corporate finance, engineering management, global marketing, statutory law compliance,
-            customer experience, and personal effectiveness. The work showcases strong attention to detail,
-            research capabilities, structured documentation, and proficiency in analytical tools and frameworks.
+          <p className="text-gray-700 text-base md:text-lg mb-12 leading-relaxed">
+            Browse a collection of in-depth academic and professional reports — designed to reflect technical skills, industry insight, and personal development through well-documented research and case analysis.
           </p>
-        </section>
 
-        <section className="grid md:grid-cols-2 gap-6">
-          <WorkCard
-            title="Corporate Finance Analysis"
-            description="Detailed analysis of dividend policies, taxation impact, and sustainability approaches for firms like AstraZeneca and GSK."
-            docLink="#"
-          />
-          <WorkCard
-            title="Engineering Management Report"
-            description="Production Planning and Control strategies with case study on Innovare Motors in the electric vehicle sector."
-            docLink="#"
-          />
-          <WorkCard
-            title="Customer Experience Strategy"
-            description="Starbucks case study showcasing AI personalization and omnichannel strategy design."
-            docLink="#"
-          />
-          <WorkCard
-            title="Global Marketing Entry Plan"
-            description="Market analysis and digital strategy for Signet Jewellery's expansion into the South Korean market."
-            docLink="#"
-          />
-        </section>
+          {/* Cards */}
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {works.map((work, index) => (
+              <WorkCard key={index} {...work} />
+            ))}
+          </div>
 
-        <div className="mt-12 text-center">
-          <img
-            src={sample} // replace with your image
-            alt="Professional Preview"
-            className="mx-auto rounded-2xl shadow-lg w-64 h-64 object-cover border-4 border-blue-300"
-          />
-          <p className="mt-4 text-sm text-gray-500">A visual snapshot of professional presence and contribution</p>
+          {/* Image section */}
+          <div className="mt-16 text-center">
+            <img
+              src={sample}
+              alt="Preview"
+              className="w-64 h-64 object-cover mx-auto rounded-2xl shadow-lg border-4 border-blue-300"
+            />
+            <p className="mt-4 text-sm text-gray-500">
+              Glimpse of our research quality and formatting
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-    <Footer/>
+
+      <Footer />
     </>
   );
 }
@@ -71,18 +75,19 @@ function WorkCard({ title, description, docLink }) {
   return (
     <motion.div
       whileHover={{ scale: 1.03 }}
-      className="bg-blue-50 p-6 rounded-xl shadow hover:shadow-lg transition"
+      transition={{ type: "spring", stiffness: 220 }}
+      className="bg-blue-50 p-6 rounded-xl shadow-md hover:shadow-lg border border-blue-100"
     >
-      <div className="flex items-center gap-3 mb-2">
+      <div className="flex items-center gap-2 mb-3">
         <FaFileAlt className="text-blue-600 text-xl" />
         <h3 className="text-lg font-semibold text-blue-800">{title}</h3>
       </div>
-      <p className="text-sm text-gray-700 mb-4">{description}</p>
+      <p className="text-sm text-gray-700 mb-4 leading-relaxed">{description}</p>
       <a
         href={docLink}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-block text-sm text-white bg-blue-700 hover:bg-blue-800 px-4 py-2 rounded-lg"
+        className="inline-block bg-blue-700 hover:bg-blue-800 text-white text-sm px-4 py-2 rounded-lg"
       >
         View Document
       </a>
