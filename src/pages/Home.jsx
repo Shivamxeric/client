@@ -64,19 +64,6 @@ const Home = () => {
         <section className="relative text-center py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-10 text-gray-900">
           <div className="max-w-4xl mx-auto">
             <motion.h1
-<<<<<<< HEAD
-              className="text-2xl sm:text-3xl md:text-5xl font-extrabold mb-4 leading-tight tracking-tight mt-6"
-              initial={{ opacity: 0, y: -40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-            >
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent ">
-                STUDYSPHERE
-              </span> <br/>
-
-           <span className='text-xl'> Your Academic Success Partner</span>
-            </motion.h1>
-=======
   className="text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight tracking-tight mb-2"
   initial={{ opacity: 0, y: -40 }}
   animate={{ opacity: 1, y: 0 }}
@@ -95,8 +82,6 @@ const Home = () => {
 >
   Your Academic Success Partner
 </motion.span>
->>>>>>> 591b8b6e1c10a892325990fee037e3d4524eec0d
-
             <motion.p
               className="text-base sm:text-lg max-w-2xl mx-auto text-gray-700 mb-6"
               initial={{ opacity: 0, scale: 0.95 }}
